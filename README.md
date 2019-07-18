@@ -32,6 +32,8 @@ AC1：当有顾客来到一号停车场停车时，如果停车场有空位，�
 
 **AC2**：当有顾客来到一号停车场停车时，如果该停车场满了，创建停车订单会失败，系统显示屏显示屏会显示“停车场已经满”的信息
 
+-----------
+
 ##### In Scope
 1. 使用RESTful API通信
 2. 使用Flyway管理数据库
@@ -39,19 +41,4 @@ AC1：当有顾客来到一号停车场停车时，如果停车场有空位，�
 ##### Out of Scope
 1. 前端页面的逻辑
 2. 系统显示屏的逻辑
-
-##### 考点
-###### Miagration
-
-使用Migration做数据库管理
-
-##### RESTful API
-- GET /parking-lots
-- GET /parking-lots/{id}
-- POST /parking-lots
-- PUT /parking-lots/{id}
-- DELETE /parking-lots/{id}
-- POST /parking-lots/orders/（失败）
-- POST /parking-lots/orders/（成功）
-- PATCH /parking-lots/orders/{id}
 
