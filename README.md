@@ -1,44 +1,44 @@
 ### Parking Lot Spring Boot Application
-#### Story1:
+#### Story1: 
 
-作为一个创业停车场的老板，我需要一个停车场Web管理系统，我可以通过这个系统来管理我的停车场。现在我诚挚邀请你们团队来为我开发这个系统，奖金丰厚。
+As the boss of a parking lot start-up company, I need a Web managment system to manage my parking lots. Now I sincerely invite your team to develop this system. There will be impressive rewards.
 
-**AC1**：当我新买了一个停车场，我可以通过系统界面来添加一个停车场，我需要填写的信息有：
- - 名字（唯一）
- - 容量（不能为负数）
- - 位置
+**AC1**: If I buy a new parking lot, I can add a parking lot on the system interface. The information I need to input include: 
+ - name(unique)
+ - capacity(cannot be minus)
+ - location
 
-**AC2**：当我的停车场被拍卖掉以后，我需要在系统中删除这个停车场
+**AC2**: If the parking lot has been sold to others, I can delete this parking lot in the system.
 
-**AC3**：我可以随时通过系统页面查看我的所有停车场列表，为了方便阅读，我想看到分页展示，每页展示15个记录
+**AC3**: I can check anytime the parking lot list on the system interface. For reading convenience, I'd like to see the information shown by pages, with 15 items on one page.
 
-**AC4**：我还可以点击某个具体的停车场查看详细信息
+**AC4**: I can also click a specific parking lot to see its details.
 
-**AC5**：我的停车场周边正在城市改建，当停车场周边的楼被拆了之后，我可以对我的停车场进行扩容，我需要在系统更新停车场容量信息
+**AC5**: The surroungding area of my parking lot is under reconstruction. After the surrounding buildings are demolished, I can expand my parking lot's capacity. So I also need to update the capacity inforamtion in the system.
 
 ----------
 
-#### Story2:
-为了方便用户停车，我买了一套自动起降杆停车牌识别系统，该系统有一个显示屏，并且能识别车牌号，当识别到有车进入的时候，如果有该停车场有空车位，就会放车进入，否则会告知用户进入不了。
-AC1：当有顾客来到一号停车场停车时，如果停车场有空位，系统会创建一个停车订并起杆，订单包含以下信息：
-  - 订单号
-  - 停车场名字
-  - 车牌号
-  - 创建时间（进来时显示屏上的时间）
-  - 结束时间（离开时显示屏上的时间）
-  - 订单状态（默认开启）
+#### Story2: 
+To improve the parkinng experience, I have bought an automatic plate number detecting access control system. It has a monitor and can detect a car's plate number. When there are free space in the parking lot, it will let the car in. If the parking lot is full, it will inform the car and deny the entrance.
 
-**AC1**：当顾客将车从一号停车场取走车时，系统会更新该停车场对应车牌号且状态是开启的订单，将前时间记录为订单结束时间，并将订单状态更改为关闭状态
+**AC1**: When a customer comes to Parking Lot NO.1, if there is free space, the system will create a parking order and lift up the entrance. The order will include below information: 
+  - Order number
+  - Name of parking lot
+  - Plate number
+  - Creation time(the time when a car enters)
+  - Close time(the time when a car leaves)
+  - Order status(open as default status)
 
-**AC2**：当有顾客来到一号停车场停车时，如果该停车场满了，创建停车订单会失败，系统显示屏显示屏会显示“停车场已经满”的信息
+**AC2**: When a customer leaves Parking Lot NO.1, the system will update the order status with this car. The leaving time will be recorded as its order close time and the order status updated to close.
 
------------
+**AC3**: When a customer wants to park in Parking Lot No.1, if the parking lot is full, parking order creation will fail, with the system monitor showing the message "The parking lot is full".
+
+-------------
 
 ##### In Scope
-1. 使用RESTful API通信
-2. 使用Flyway管理数据库
+1. Use RESTful API to communicate
+2. Usse Flyway to manage database
 
 ##### Out of Scope
-1. 前端页面的逻辑
-2. 系统显示屏的逻辑
-
+1. Logic of front-end page
+2. Logic of system monitor
